@@ -1,0 +1,478 @@
+.mentorship {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.mentorship-bg-glow {
+  position: absolute;
+  top: 30%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(80px);
+}
+
+.mentorship-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.mentorship-header .section-label {
+  justify-content: center;
+}
+
+.mentorship-header .section-subtitle {
+  margin: 0 auto;
+}
+
+.mentorship-content {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 40px;
+  align-items: stretch;
+  margin-bottom: 50px;
+}
+
+/* Topics Card Styling */
+.topics-card {
+  background: rgba(17, 17, 17, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.topics-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.topics-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: auto;
+}
+
+.topic-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.topic-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-full);
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+.topics-stat {
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.topics-stat-number {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.topics-stat-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Benefits Grid Styling */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  height: 100%;
+}
+
+.benefit-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.benefit-icon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.benefit-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.benefit-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* CTA Card Styling */
+.mentorship-cta {
+  margin-top: 40px;
+}
+
+.cta-card {
+  background: linear-gradient(135deg, rgba(22, 22, 22, 0.9) 0%, rgba(10, 10, 10, 0.95) 100%);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-xl);
+  padding: 40px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 175, 55, 0.05);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.cta-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.03) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-text {
+  flex: 1;
+}
+
+.cta-text h3 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.cta-text p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  max-width: 650px;
+  line-height: 1.6;
+}
+
+.cta-card .btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .mentorship-content {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .topics-title {
+    font-size: 1.3rem;
+  }
+
+  .cta-card {
+    padding: 36px 40px;
+    gap: 32px;
+  }
+
+  .cta-text h3 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .mentorship-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+  
+  .cta-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 35px 30px;
+    gap: 24px;
+  }
+  
+  .cta-text p {
+    margin: 0 auto;
+  }
+
+  .cta-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .topics-title {
+    font-size: 1.2rem;
+  }
+
+  .topics-card {
+    padding: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mentorship-header {
+    margin-bottom: 50px;
+  }
+
+  .mentorship-content {
+    gap: 28px;
+    margin-bottom: 36px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .topics-card {
+    padding: 28px;
+  }
+
+  .topics-title {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+
+  .topics-list {
+    gap: 14px;
+  }
+
+  .topic-item {
+    font-size: 0.95rem;
+  }
+
+  .benefit-icon {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+
+  .benefit-title {
+    font-size: 1rem;
+  }
+
+  .benefit-desc {
+    font-size: 0.85rem;
+  }
+
+  .cta-card {
+    padding: 32px 24px;
+  }
+
+  .cta-text h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .cta-text p {
+    font-size: 0.95rem;
+  }
+
+  .cta-card .btn {
+    padding: 12px 28px;
+    font-size: 0.9rem;
+  }
+
+  .topics-stat {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .topics-stat-number {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .mentorship-bg-glow {
+    width: 350px;
+    height: 350px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .topics-card {
+    padding: 24px;
+    border-left: 2px solid var(--gold);
+  }
+
+  .topics-title {
+    font-size: 1rem;
+  }
+
+  .topics-list {
+    gap: 12px;
+  }
+
+  .topic-item {
+    font-size: 0.9rem;
+  }
+
+  .topic-check {
+    width: 20px;
+    height: 20px;
+  }
+
+  .benefit-card {
+    text-align: center;
+    align-items: center;
+  }
+
+  .benefit-icon {
+    font-size: 1.6rem;
+  }
+
+  .benefit-title {
+    font-size: 0.95rem;
+  }
+
+  .benefit-desc {
+    font-size: 0.8rem;
+  }
+
+  .cta-card {
+    padding: 28px 20px;
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  .cta-text h3 {
+    font-size: 1.2rem;
+  }
+
+  .cta-text p {
+    font-size: 0.9rem;
+  }
+
+  .cta-card .btn {
+    width: 100%;
+    padding: 12px 24px;
+  }
+
+  .topics-stat-number {
+    font-size: 1.6rem;
+  }
+
+  .topics-stat-label {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mentorship-header {
+    margin-bottom: 40px;
+  }
+
+  .mentorship-content {
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .topics-card {
+    padding: 20px;
+    margin-bottom: 0;
+  }
+
+  .topics-title {
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+  }
+
+  .topics-list {
+    gap: 10px;
+  }
+
+  .topic-item {
+    font-size: 0.85rem;
+  }
+
+  .benefit-icon {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+
+  .benefit-title {
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+  }
+
+  .benefit-desc {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .cta-card {
+    padding: 24px 16px;
+    margin-top: 32px;
+  }
+
+  .cta-text h3 {
+    font-size: 1.1rem;
+  }
+
+  .cta-text p {
+    font-size: 0.8rem;
+  }
+
+  .cta-card .btn {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+
+  .topics-stat {
+    padding-top: 16px;
+    margin-top: 16px;
+  }
+
+  .topics-stat-number {
+    font-size: 1.4rem;
+  }
+}

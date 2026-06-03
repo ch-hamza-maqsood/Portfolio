@@ -1,0 +1,4 @@
+/* Custom global layout overrides if any, otherwise styling is in index.css and components */
+main {
+  min-height: 100vh;
+}

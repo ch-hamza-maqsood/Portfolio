@@ -1,0 +1,283 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 18px 0;
+  transition: var(--transition-base);
+}
+
+.navbar.scrolled {
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 12px 0;
+}
+
+.navbar-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 1001;
+}
+
+.logo-monogram {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 1.4rem;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  border: 2px solid var(--gold);
+  padding: 4px 10px;
+  border-radius: 8px;
+  line-height: 1;
+}
+
+.logo-text {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navbar-links li a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  position: relative;
+  padding: 4px 0;
+}
+
+.navbar-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gold);
+  transition: var(--transition-base);
+}
+
+.navbar-links li a:hover {
+  color: var(--gold);
+}
+
+.navbar-links li a:hover::after {
+  width: 100%;
+}
+
+.nav-cta-desktop {
+  padding: 10px 24px;
+  font-size: 0.85rem;
+}
+
+.nav-cta-mobile {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 1001;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: var(--text-primary);
+  transition: var(--transition-base);
+  border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+@media (max-width: 1024px) {
+  .navbar-container {
+    padding: 0 20px;
+  }
+
+  .navbar-links {
+    gap: 28px;
+  }
+
+  .navbar-links li a {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--bg-secondary);
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+    padding: 40px;
+    transition: right 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 1000;
+    border-left: 1px solid var(--border-subtle);
+  }
+
+  .navbar-links.open {
+    right: 0;
+  }
+
+  .navbar-links li a {
+    font-size: 1.1rem;
+  }
+
+  .nav-cta-desktop {
+    display: none;
+  }
+
+  .nav-cta-mobile {
+    display: block;
+    margin-top: 16px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0 16px;
+  }
+
+  .logo-monogram {
+    font-size: 1.2rem;
+    padding: 4px 8px;
+  }
+
+  .logo-text {
+    font-size: 1rem;
+  }
+
+  .navbar-links {
+    width: 260px;
+    padding: 36px 30px;
+    gap: 20px;
+  }
+
+  .hamburger {
+    width: 28px;
+  }
+
+  .hamburger span {
+    width: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar-container {
+    padding: 0 12px;
+  }
+
+  .logo-monogram {
+    font-size: 1.1rem;
+    border: 1.5px solid var(--gold);
+    padding: 3px 6px;
+  }
+
+  .logo-text {
+    font-size: 0.95rem;
+  }
+
+  .navbar-links {
+    width: 100%;
+    right: -100%;
+    padding: 80px 24px 40px 24px;
+  }
+
+  .hamburger span {
+    width: 20px;
+    height: 1.5px;
+  }
+
+  .nav-cta-mobile {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 14px 0;
+  }
+
+  .navbar.scrolled {
+    padding: 10px 0;
+  }
+
+  .navbar-container {
+    padding: 0 10px;
+  }
+
+  .logo-monogram {
+    font-size: 1rem;
+    padding: 2px 6px;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  .navbar-links {
+    width: 100%;
+    padding: 70px 20px 40px 20px;
+  }
+
+  .hamburger span {
+    width: 18px;
+  }
+
+  .nav-cta-mobile {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+  }
+}

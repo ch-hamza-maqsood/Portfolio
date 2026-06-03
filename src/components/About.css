@@ -1,0 +1,251 @@
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.about-text {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.about-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius-md);
+  transition: var(--transition-base);
+}
+
+.about-stat-item:hover {
+  background: rgba(212, 175, 55, 0.03);
+  border-color: rgba(212, 175, 55, 0.15);
+  transform: translateY(-2px);
+}
+
+.stat-icon {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stat-num {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--gold);
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+@media (max-width: 576px) {
+  .about-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+.about-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about-highlight-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 22px !important;
+}
+
+.about-highlight-card:hover {
+  transform: translateY(-2px) !important;
+}
+
+.highlight-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(212, 175, 55, 0.08);
+  border-radius: var(--radius-md);
+}
+
+.highlight-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.highlight-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .about-grid {
+    gap: 50px;
+  }
+
+  .about-text {
+    font-size: 0.95rem;
+  }
+
+  .about-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .about-text {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    gap: 36px;
+  }
+
+  .about-text {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .about-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .about-stat-item {
+    padding: 14px;
+  }
+
+  .stat-num {
+    font-size: 1.05rem;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+  }
+
+  .highlight-icon {
+    font-size: 1.5rem;
+    width: 44px;
+    height: 44px;
+  }
+
+  .highlight-title {
+    font-size: 0.95rem;
+  }
+
+  .highlight-desc {
+    font-size: 0.8rem;
+  }
+
+  .about-highlight-card {
+    padding: 18px !important;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .about-text {
+    font-size: 0.85rem;
+  }
+
+  .about-highlight-card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 16px !important;
+  }
+
+  .highlight-title {
+    font-size: 0.9rem;
+  }
+
+  .highlight-desc {
+    font-size: 0.75rem;
+  }
+
+  .highlight-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-grid {
+    gap: 30px;
+  }
+
+  .about-stats-grid {
+    gap: 10px;
+  }
+
+  .about-stat-item {
+    padding: 12px;
+  }
+
+  .stat-num {
+    font-size: 0.95rem;
+  }
+
+  .stat-label {
+    font-size: 0.65rem;
+  }
+
+  .about-highlight-card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 14px !important;
+  }
+}
