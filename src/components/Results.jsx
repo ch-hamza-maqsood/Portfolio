@@ -123,13 +123,8 @@ const Results = () => {
   };
 
   const loadMore = () => {
-    setIsLoadingMore(true);
-    // Simulate fast loading with minimal delay
-    setTimeout(() => {
-      setVisibleCount((prev) => Math.min(prev + 4, filteredResults.length));
-      setIsLoadingMore(false);
-    }, 150);
-  };
+  setVisibleCount((prev) => Math.min(prev + 6, filteredResults.length));
+};
 
   return (
     <section className="results section" id="results" ref={sectionRef}>
