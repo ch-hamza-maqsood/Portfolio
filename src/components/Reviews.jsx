@@ -103,12 +103,7 @@ const Reviews = () => {
   };
 
   const loadMore = () => {
-    setIsLoadingMore(true);
-    // Fast loading with minimal delay
-    setTimeout(() => {
-      setVisibleCount((prev) => Math.min(prev + 4, reviewsData.length));
-      setIsLoadingMore(false);
-    }, 150);
+    setVisibleCount((prev) => Math.min(prev + 6, reviewsData.length));
   };
 
   return (
@@ -132,16 +127,15 @@ const Reviews = () => {
             <div 
               key={review.id} 
               className="review-item glass-card reveal-scale"
-              style={{ transitionDelay: `${(idx % 3) * 0.1}s` }}
+              style={{ transitionDelay: '0s' }}
               onClick={() => openLightbox(review.image)}
             >
               <div className="review-img-container">
-                <img 
-                  src={review.image} 
-                  alt={review.platform} 
-                  className="review-img"
-                  loading="lazy"
-                  decoding="async"
+                <img
+                  src={result.image}
+                  alt={result.title}
+                  className="result-img"
+                  loading="eager"
                 />
                 <span className={`review-platform-badge ${review.badgeClass}`}>
                   {review.platform}
