@@ -7,6 +7,7 @@ const Reviews = () => {
   const [isLoadingMore, setIsLoadingMore] = useState(false);
   const sectionRef = useRef(null);
 
+  // Initial Intersection Observer for scroll animations
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -24,6 +25,16 @@ const Reviews = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Automatically trigger animations for newly loaded items
+  useEffect(() => {
+    if (sectionRef.current) {
+      setTimeout(() => {
+        const newItems = sectionRef.current.querySelectorAll('.reveal-scale:not(.visible)');
+        newItems.forEach((el) => el.classList.add('visible'));
+      }, 50);
+    }
+  }, [visibleCount]);
+
   // Programmatic mapping of all 22 reviews with detailed captions
   const reviewsData = Array.from({ length: 22 }, (_, i) => {
     const id = i + 1;
@@ -35,7 +46,7 @@ const Reviews = () => {
       platform = 'Instagram Direct';
       badgeClass = 'badge-instagram';
       if (id === 1) {
-        caption = 'Instagram conversation praising Hamza\'s genuine and personalized mentorship approach with real results.';
+        caption = "Instagram conversation praising Hamza's genuine and personalized mentorship approach with real results.";
       } else if (id === 11) {
         caption = 'Student sharing experience: "Best trading mentor I\'ve ever worked with. Real strategies, real profits."';
       } else if (id === 12) {
@@ -103,6 +114,7 @@ const Reviews = () => {
   };
 
   const loadMore = () => {
+    // Adds 6 new items every time the button is clicked
     setVisibleCount((prev) => Math.min(prev + 6, reviewsData.length));
   };
 
@@ -131,9 +143,10 @@ const Reviews = () => {
               onClick={() => openLightbox(review.image)}
             >
               <div className="review-img-container">
+                {/* Fixed the bug here: Changed result.image to review.image */}
                 <img
-                  src={result.image}
-                  alt={result.title}
+                  src={review.image}
+                  alt={review.platform}
                   className="result-img"
                   loading="eager"
                 />

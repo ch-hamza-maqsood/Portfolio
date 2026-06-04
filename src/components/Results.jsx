@@ -8,6 +8,7 @@ const Results = () => {
   const [isLoadingMore, setIsLoadingMore] = useState(false);
   const sectionRef = useRef(null);
 
+  // Initial Intersection Observer for scroll animations
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -24,6 +25,16 @@ const Results = () => {
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
+
+  // Automatically trigger animations for newly loaded items
+  useEffect(() => {
+    if (sectionRef.current) {
+      setTimeout(() => {
+        const newItems = sectionRef.current.querySelectorAll('.reveal-scale:not(.visible)');
+        newItems.forEach((el) => el.classList.add('visible'));
+      }, 50);
+    }
+  }, [visibleCount, activeFilter]);
 
   // Reset pagination when filter changes
   useEffect(() => {
@@ -123,6 +134,7 @@ const Results = () => {
   };
 
   const loadMore = () => {
+    // Adds 6 new items every time the button is clicked
     setVisibleCount((prev) => Math.min(prev + 6, filteredResults.length));
   };
 
