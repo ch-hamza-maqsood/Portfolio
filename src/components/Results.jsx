@@ -31,8 +31,9 @@ const Results = () => {
   }, [activeFilter]);
 
   // Optimized programmatic mapping of all 24 results with rich descriptions
-  const resultsData = Array.from({ length: 24 }, (_, i) => {
-    const id = i + 1;
+  const resultsData = Array.from({ length: 24 }, (_, i) => i + 1)
+  .filter(id => id !== 4 && id !== 5)
+  .map(id => {
     let category = 'prop-firm';
     let categoryLabel = 'Prop Firm';
     let title = `Prop Challenge Passed #${id}`;
