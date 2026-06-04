@@ -123,8 +123,8 @@ const Results = () => {
   };
 
   const loadMore = () => {
-  setVisibleCount((prev) => Math.min(prev + 6, filteredResults.length));
-};
+    setVisibleCount((prev) => Math.min(prev + 6, filteredResults.length));
+  };
 
   return (
     <section className="results section" id="results" ref={sectionRef}>
@@ -160,15 +160,14 @@ const Results = () => {
             <div 
               key={result.id} 
               className="result-card glass-card reveal-scale"
-              style={{ transitionDelay: `${(idx % 3) * 0.1}s` }}
+              style={{ transitionDelay: '0s' }}
             >
               <div className="result-image-wrapper" onClick={() => openLightbox(result.image)}>
-                <img 
-                  src={result.image} 
-                  alt={result.title} 
-                  className="result-img" 
-                  loading="lazy"
-                  decoding="async"
+                <img
+                  src={result.image}
+                  alt={result.title}
+                  className="result-img"
+                  loading="eager"
                 />
                 <div className="result-overlay">
                   <span className="zoom-icon">🔍 View Full Image</span>
